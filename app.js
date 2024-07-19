@@ -1,39 +1,16 @@
-/*
-<div id = parentDiv> 
-  <div id = child div> 
-        <ol> 
-            <li>
-            <li>
-        </ol>
-  <p child Para> 
-  <h3 childHeading> 
-</div>
-*/
+import React from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-const parentDiv = React.createElement("div", 
-  { 
-    id:"parentDiv"
-  },
-  [React.createElement("div",
-    {
-      id:"childDiv"
-    },
-    React.createElement("ol",{},
-      [React.createElement("li",{},"this is first Li"),React.createElement("li",{},"this is second Li")]
-    )
-  ),React.createElement("p",
-    {
-      id:"childPara"
-    },
-    "this is para"
-  ), React.createElement("h3",
-    {
-      id: "childHeading"
-    },
-    "this is heading"
-  )]
+
+//functional components 
+const heading = <h1>hey this is another thing</h1>
+const HeadingComponent = () => (
+  <div> <TitleComponent/>
+  </div> 
 )
-root.render(parentDiv);
-
-
+console.log(<HeadingComponent/>)
+const TitleComponent = () => (
+  <h1> hey this h1</h1> 
+)
+const root = ReactDOM.createRoot(document.querySelector("#root"));
+root.render(HeadingComponent());
